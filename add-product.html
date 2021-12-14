@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is the homepage for the minimalist, a clothing store." />
+    <title>Add Product</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav-logo" href="index.html"><img class="logo" src="images/logo.png" alt="the minimalist logo" /></a>
+        <ul></ul>
+        <label id="icon">
+          <i class="fas fa-bars"></i>
+        </label>
+      </nav>
+    </header>
+
+    <main>
+      <form id="productForm">
+        <h1>Add a product to the store</h1>
+
+        <input type="text" id="title" placeholder="title" />
+
+        <input type="number" id="price" placeholder="price" />
+
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="description"></textarea>
+
+        <input type="text" id="image" placeholder="image URL" />
+
+        <label class="switch">
+          Featured:
+          <i id="featuredToggle" class="far fa-circle"></i>
+        </label>
+
+        <button class="btn-primary" type="submit">Add</button>
+
+        <div class="message-container"></div>
+      </form>
+      <div class="message-container"></div>
+    </main>
+
+    <footer>
+      <p>Copyright 2021</p>
+      <p>Terms & Conditions</p>
+    </footer>
+
+    <script src="js/add-product.js" type="module"></script>
+    <script src="js/components/common/dropdown.js"></script>
+  </body>
+</html>

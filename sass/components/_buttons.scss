@@ -1,0 +1,13 @@
+.btn-primary {
+  background: getColor(primary);
+  text-decoration: none;
+  color: white;
+  padding: 0.4em;
+  border-radius: 5px;
+  border: none;
+
+  &:hover {
+    background: darken(getColor(primary), 10);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,28 @@
+#loginForm {
+  margin: 20px auto;
+  max-width: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: getColor(secondary);
+    text-align: center;
+  }
+
+  i {
+    font-size: 52px;
+    color: getColor(secondary);
+    margin: 20px auto 10px auto;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+  }
+}

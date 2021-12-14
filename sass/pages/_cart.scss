@@ -1,0 +1,34 @@
+.cart {
+  max-width: 80%;
+  margin: 20px auto;
+
+  @media (min-width: $tablet-width) {
+    max-width: 60%;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  hr {
+    margin-bottom: 10px;
+  }
+
+  .product {
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  img {
+    height: 150px;
+    margin-right: 20px;
+  }
+
+  p {
+    margin: 10px 0 58px 0;
+
+    @media (min-width: $tablet-width) {
+      margin: 10px 0 43px 0;
+    }
+  }
+}
