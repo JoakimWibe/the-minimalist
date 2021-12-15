@@ -10,25 +10,9 @@ const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
 const message = document.querySelector(".message-container");
-
-form.addEventListener("submit", submitForm);
-
-let featuredValue = false;
-
 const featuredToggle = document.querySelector("#featuredToggle");
 
-featuredToggle.addEventListener("click", toggleFeatured);
-
-function toggleFeatured() {
-  this.classList.toggle("far");
-  this.classList.toggle("fas");
-
-  if (this.classList.contains("fas")) {
-    featuredValue = true;
-  } else {
-    featuredValue = false;
-  }
-}
+form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
   event.preventDefault();
@@ -39,6 +23,12 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const imageValue = image.value;
+
+  let featuredValue = false;
+
+  if (featuredToggle.checked) {
+    featuredValue = true;
+  }
 
   if (titleValue.lenght === 0 || priceValue.lenght === 0 || isNaN(priceValue) || descriptionValue.lenght === 0 || imageValue.lenght === 0) {
     return displayMessage("warning", "please add valid values", ".message-container");

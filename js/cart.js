@@ -15,6 +15,10 @@ let total = 0;
 shoppingCart.forEach((product) => {
   const price = product.price;
 
+  if (isNaN(price)) {
+    price = 0;
+  }
+
   const integer = parseInt(price, 10);
 
   total += integer;

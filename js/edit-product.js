@@ -36,7 +36,7 @@ const message = document.querySelector(".message-container");
     idInput.value = details.id;
 
     if (details.featured === true) {
-      featuredToggle.classList.toggle("fas");
+      featuredToggle.checked = true;
     }
 
     deleteProduct(details.id);
@@ -58,9 +58,17 @@ function submitForm(event) {
   const imageValue = image.value;
   const idValue = idInput.value;
 
+  let featuredValue = null;
+
+  if (featuredToggle.checked) {
+    featuredValue = true;
+  } else {
+    featuredValue = false;
+  }
+
   if (titleValue.lenght === 0 || priceValue.lenght === 0 || isNaN(priceValue) || descriptionValue.lenght === 0 || imageValue.lenght === 0) {
     return displayMessage("warning", "please add valid values", ".message-container");
   }
 
-  updateProduct(titleValue, priceValue, descriptionValue, imageValue, idValue);
+  updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue, idValue);
 }
