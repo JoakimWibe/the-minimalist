@@ -22,7 +22,7 @@ shoppingCart.forEach((product) => {
   cartContainer.innerHTML += `<div class="product">                            
                                     <img src="${product.image}" />
                                     <div class="details">
-                                      <h2 class="title>${product.title}</h2>
+                                      <h2 class="title">${product.title}</h2>
                                       <p class="price">kr ${product.price}</p>
                                       <div class="buttons">
                                         <a class="btn-primary" href="product-details.html?id=${product.id}">Show product</a>
