@@ -67,7 +67,7 @@ function submitForm(event) {
   }
 
   if (titleValue.lenght === 0 || priceValue.lenght === 0 || isNaN(priceValue) || descriptionValue.lenght === 0 || imageValue.lenght === 0) {
-    return displayMessage("warning", "please add valid values", ".message-container");
+    return displayMessage("warning", "please fill out all fields", ".message-container");
   }
 
   updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue, idValue);

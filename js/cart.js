@@ -1,23 +1,19 @@
 import navbar from "./components/common/navbar.js";
-import { getExistingProducts } from "./utils/storage.js";
+import { getExistingProducts, clearCart } from "./utils/storage/shoppingCart.js";
+import { removeFromCart } from "./components/product/removeFromCart.js";
 import displayMessage from "./components/common/displayMessage.js";
 
 navbar();
 
 const shoppingCart = getExistingProducts();
-
 const cartContainer = document.querySelector(".cart-container");
-
 const totalPrice = document.querySelector(".total-container");
+const clearCartBtn = document.querySelector("#clearCartBtn");
 
 let total = 0;
 
 shoppingCart.forEach((product) => {
   const price = product.price;
-
-  if (isNaN(price)) {
-    price = 0;
-  }
 
   const integer = parseInt(price, 10);
 
@@ -26,15 +22,27 @@ shoppingCart.forEach((product) => {
   cartContainer.innerHTML += `<div class="product">                            
                                     <img src="${product.image}" />
                                     <div class="details">
-                                      <h2>${product.title}</h2>
-                                      <p>kr ${product.price}</p>
-                                      <a class="btn-primary" href="product-details.html?id=${product.id}">Show product</a>
-                                    </div>
+                                      <h2 class="title>${product.title}</h2>
+                                      <p class="price">kr ${product.price}</p>
+                                      <div class="buttons">
+                                        <a class="btn-primary" href="product-details.html?id=${product.id}">Show product</a>
+                                        <i data-id="${product.id}" id="trashBtn" class="fas fa-trash"></i>
+                                      </div>
+                                    </div>  
                               </div>`;
 
   totalPrice.innerHTML = `<p>Total: kr ${total}</p>`;
 });
 
+clearCartBtn.addEventListener("click", clearCart);
+
 if (shoppingCart.length < 1) {
   displayMessage("warning", "Your shopping cart is empty", ".cart-container");
+  clearCartBtn.style.display = "none";
 }
+
+const trashBtn = document.querySelectorAll("#trashBtn");
+
+trashBtn.forEach((btn) => {
+  btn.addEventListener("click", removeFromCart);
+});

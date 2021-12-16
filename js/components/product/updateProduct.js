@@ -1,5 +1,5 @@
 import { productsUrl } from "../../settings/api.js";
-import { getToken } from "../../utils/storage.js";
+import { getToken } from "../../utils/storage/user.js";
 import displayMessage from "../common/displayMessage.js";
 
 export default async function updateProduct(title, price, description, image, featured, id) {

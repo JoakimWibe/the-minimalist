@@ -1,5 +1,4 @@
-import { getEmail } from "../../utils/storage.js";
-import { logOutUser } from "../../utils/storage.js";
+import { getEmail, logOutUser } from "../../utils/storage/user.js";
 
 export default function navbar() {
   const { pathname } = document.location;

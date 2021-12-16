@@ -1,5 +1,5 @@
 import { baseUrl } from "./settings/api.js";
-import { saveToken, saveUser } from "./utils/storage.js";
+import { saveToken, saveUser } from "./utils/storage/user.js";
 import { validateEmail, checkLenght } from "./components/common/formValidation.js";
 import navbar from "./components/common/navbar.js";
 import displayMessage from "./components/common/displayMessage.js";

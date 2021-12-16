@@ -1,4 +1,4 @@
-import { getExistingProducts, saveToCart } from "../../utils/storage.js";
+import { getExistingProducts, saveToCart } from "../../utils/storage/shoppingCart.js";
 import displayMessage from "../common/displayMessage.js";
 
 export function handleAddToCart() {
@@ -9,11 +9,16 @@ export function handleAddToCart() {
 
   const currentCart = getExistingProducts();
 
-  const product = { id: id, title: title, price: price, image: image };
+  const productExists = currentCart.find(function (product) {
+    return product.id === id;
+  });
 
-  currentCart.push(product);
-
-  saveToCart(currentCart);
-
-  displayMessage("success", "product added to the cart", ".message-container");
+  if (!productExists) {
+    const product = { id: id, title: title, price: price, image: image };
+    currentCart.push(product);
+    saveToCart(currentCart);
+    displayMessage("success", "product added to the cart", ".message-container");
+  } else {
+    displayMessage("warning", "product is already added to the cart", ".message-container");
+  }
 }

@@ -7,7 +7,7 @@ export function renderFeaturedProducts(products) {
     }
 
     productsContainer.innerHTML += `<div class="card">
-                                          <img src="${products[i].image_url}">
+                                          <img src="${products[i].image_url}" >
                                           <h3>${products[i].title}</h3>
                                           <p>${products[i].price} kr</p>                                      
                                           <a href="product-details.html?id=${products[i].id}" class="btn-primary">More details</a>                                     

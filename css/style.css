@@ -112,6 +112,12 @@ textarea {
   cursor: pointer;
 }
 
+#trashBtn {
+  cursor: pointer;
+  font-size: 28px;
+  margin-left: 10px;
+}
+
 input {
   padding: 0.5em;
   border-radius: 5px;
@@ -475,14 +481,31 @@ nav #icon {
   margin-right: 20px;
 }
 
-.cart p {
-  margin: 10px 0 58px 0;
+.cart .price {
+  margin: 10px 0 54px 0;
 }
 
 @media (min-width: 768px) {
-  .cart p {
-    margin: 10px 0 43px 0;
+  .cart .price {
+    margin: 10px 0 40px 0;
   }
+}
+
+.cart .buttons {
+  margin-top: 30px;
+}
+
+.cart .cart-summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #loginForm {

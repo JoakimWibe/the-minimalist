@@ -1,5 +1,5 @@
 import { productsUrl } from "../../settings/api.js";
-import { getToken } from "../../utils/storage.js";
+import { getToken } from "../../utils/storage/user.js";
 
 export default function deleteProduct(id) {
   const container = document.querySelector(".delete-container");

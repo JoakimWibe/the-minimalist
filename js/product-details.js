@@ -1,7 +1,7 @@
 import { productsUrl } from "./settings/api.js";
 import { handleAddToCart } from "./components/product/addToCart.js";
 import navbar from "./components/common/navbar.js";
-import { getEmail } from "./utils/storage.js";
+import { getEmail } from "./utils/storage/user.js";
 import displayMessage from "./components/common/displayMessage.js";
 
 navbar();
@@ -53,4 +53,6 @@ function createHTML(product) {
   if (!email) {
     editBtn.style.display = "none";
   }
+
+  console.log(product);
 }
