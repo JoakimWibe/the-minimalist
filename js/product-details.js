@@ -35,7 +35,7 @@ function createHTML(product) {
                                     <h2>${product.price} kr</h2>
                                     <p>${product.description}</p>
                                     <div class="buttons"> 
-                                        <button class="btn-primary" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image_url}">Add to cart <i class="fas fa-cart-plus"></i></button>
+                                        <button class="btn-primary" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image_url}" data-alt="${product.alt_text}">Add to cart <i class="fas fa-cart-plus"></i></button>
                                         <a class="btn-primary" id="edit-btn" href="edit-product.html?id=${product.id}">Edit product</a>
                                     </div>
                                     <div class="message-container"></div>

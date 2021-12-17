@@ -20,7 +20,7 @@ shoppingCart.forEach((product) => {
   total += integer;
 
   cartContainer.innerHTML += `<div class="product">                            
-                                    <img src="${product.image}" />
+                                    <img src="${product.image}" alt="${product.altText}" />
                                     <div class="details">
                                       <h2 class="title">${product.title}</h2>
                                       <p class="price">kr ${product.price}</p>

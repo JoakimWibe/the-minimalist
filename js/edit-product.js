@@ -27,6 +27,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
+const altText = document.querySelector("#altText");
 const featuredToggle = document.querySelector("#featuredToggle");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
@@ -40,6 +41,7 @@ const message = document.querySelector(".message-container");
     price.value = details.price;
     description.value = details.description;
     image.value = details.image_url;
+    altText.value = details.alt_text;
     idInput.value = details.id;
 
     if (details.featured === true) {
@@ -63,6 +65,7 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const imageValue = image.value.trim();
+  const altTextValue = altText.value.trim();
   const idValue = parseFloat(idInput.value);
 
   let featuredValue = null;
@@ -73,9 +76,16 @@ function submitForm(event) {
     featuredValue = false;
   }
 
-  if (titleValue.lenght === 0 || priceValue.lenght === 0 || isNaN(priceValue) || descriptionValue.lenght === 0 || imageValue.lenght === 0) {
+  if (
+    titleValue.lenght === 0 ||
+    priceValue.lenght === 0 ||
+    isNaN(priceValue) ||
+    descriptionValue.lenght === 0 ||
+    imageValue.lenght === 0 ||
+    altTextValue.lenght === 0
+  ) {
     return displayMessage("warning", "please fill out all fields", ".message-container");
   }
 
-  updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue, idValue);
+  updateProduct(titleValue, priceValue, descriptionValue, imageValue, altTextValue, featuredValue, idValue);
 }

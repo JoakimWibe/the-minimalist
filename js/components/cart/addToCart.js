@@ -6,6 +6,7 @@ export function handleAddToCart() {
   const title = this.dataset.title;
   const price = this.dataset.price;
   const image = this.dataset.image;
+  const altText = this.dataset.alt;
 
   const currentCart = getExistingProducts();
 
@@ -14,7 +15,7 @@ export function handleAddToCart() {
   });
 
   if (!productExists) {
-    const product = { id: id, title: title, price: price, image: image };
+    const product = { id: id, title: title, price: price, image: image, altText: altText };
     currentCart.push(product);
     saveToCart(currentCart);
     displayMessage("success", "product added to the cart", ".message-container");

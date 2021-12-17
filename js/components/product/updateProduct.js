@@ -2,9 +2,9 @@ import { productsUrl } from "../../settings/api.js";
 import displayMessage from "../common/displayMessage.js";
 import { getToken } from "../../utils/storage/user.js";
 
-export default async function updateProduct(title, price, description, image, featured, id) {
+export default async function updateProduct(title, price, description, image, altText, featured, id) {
   const url = productsUrl + "/" + id;
-  const data = JSON.stringify({ title: title, price: price, description: description, image_url: image, featured: featured });
+  const data = JSON.stringify({ title: title, price: price, description: description, image_url: image, alt_text: altText, featured: featured });
   const token = getToken();
 
   const options = {

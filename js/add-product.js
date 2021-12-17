@@ -16,6 +16,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
+const altText = document.querySelector("#altText");
 const message = document.querySelector(".message-container");
 const featuredToggle = document.querySelector("#featuredToggle");
 
@@ -30,6 +31,7 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const imageValue = image.value.trim();
+  const altTextValue = altText.value.trim();
 
   let featuredValue = false;
 
@@ -41,5 +43,5 @@ function submitForm(event) {
     return displayMessage("warning", "please fill out all fields", ".message-container");
   }
 
-  createProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue);
+  createProduct(titleValue, priceValue, descriptionValue, imageValue, altTextValue, featuredValue);
 }
