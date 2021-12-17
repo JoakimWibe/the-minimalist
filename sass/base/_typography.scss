@@ -43,7 +43,11 @@ p {
 
 .btn-primary {
   font-family: $font-headings;
-  font-size: 20px;
+  font-size: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
 }
 
 #navLink,

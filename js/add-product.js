@@ -1,6 +1,13 @@
 import navbar from "./components/common/navbar.js";
 import displayMessage from "./components/common/displayMessage.js";
+import { getToken } from "./utils/storage/user.js";
 import { createProduct } from "./components/product/createProduct.js";
+
+const token = getToken();
+
+if (!token) {
+  location.href = "/";
+}
 
 navbar();
 
@@ -22,7 +29,7 @@ function submitForm(event) {
   const titleValue = title.value.trim();
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
-  const imageValue = image.value;
+  const imageValue = image.value.trim();
 
   let featuredValue = false;
 

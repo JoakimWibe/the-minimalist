@@ -1,3 +1,5 @@
+import { saveToStorage, getFromStorage } from "../storage/global.js";
+
 const tokenKey = "token";
 const userKey = "user";
 
@@ -15,6 +17,7 @@ export function saveUser(user) {
 
 export function logOutUser(user) {
   localStorage.removeItem(userKey, user);
+  localStorage.removeItem(tokenKey);
   location.href = "/";
 }
 
@@ -26,18 +29,4 @@ export function getEmail() {
   }
 
   return null;
-}
-
-function saveToStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
-
-function getFromStorage(key) {
-  const value = localStorage.getItem(key);
-
-  if (!value) {
-    return [];
-  }
-
-  return JSON.parse(value);
 }

@@ -1,5 +1,9 @@
+import { saveToStorage } from "../storage/global.js";
+
+const shoppingcart = "shoppingcart";
+
 export function getExistingProducts() {
-  const cart = localStorage.getItem("shoppingcart");
+  const cart = localStorage.getItem(shoppingcart);
 
   if (!cart) {
     return [];
@@ -9,7 +13,7 @@ export function getExistingProducts() {
 }
 
 export function saveToCart(cart) {
-  localStorage.setItem("shoppingcart", JSON.stringify(cart));
+  saveToStorage(shoppingcart, cart);
 }
 
 export function clearCart() {

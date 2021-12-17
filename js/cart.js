@@ -1,6 +1,6 @@
 import navbar from "./components/common/navbar.js";
 import { getExistingProducts, clearCart } from "./utils/storage/shoppingCart.js";
-import { removeFromCart } from "./components/product/removeFromCart.js";
+import { removeFromCart } from "./components/cart/removeFromCart.js";
 import displayMessage from "./components/common/displayMessage.js";
 
 navbar();

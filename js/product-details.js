@@ -1,5 +1,5 @@
 import { productsUrl } from "./settings/api.js";
-import { handleAddToCart } from "./components/product/addToCart.js";
+import { handleAddToCart } from "./components/cart/addToCart.js";
 import navbar from "./components/common/navbar.js";
 import { getEmail } from "./utils/storage/user.js";
 import displayMessage from "./components/common/displayMessage.js";
@@ -12,7 +12,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const url = productsUrl + "/" + id;
 
-async function fetchProduct() {
+(async function fetchProduct() {
   try {
     const response = await fetch(url);
     const product = await response.json();
@@ -21,9 +21,7 @@ async function fetchProduct() {
   } catch (error) {
     displayMessage("error", "an error occured", ".product-container");
   }
-}
-
-fetchProduct();
+})();
 
 function createHTML(product) {
   document.title = product.title;
@@ -53,6 +51,4 @@ function createHTML(product) {
   if (!email) {
     editBtn.style.display = "none";
   }
-
-  console.log(product);
 }

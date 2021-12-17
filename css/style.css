@@ -78,7 +78,13 @@ p {
 
 .btn-primary {
   font-family: "Belleza", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .btn-primary {
+    font-size: 20px;
+  }
 }
 
 #navLink,
@@ -114,12 +120,12 @@ textarea {
 
 #trashBtn {
   cursor: pointer;
-  font-size: 28px;
+  font-size: 22px;
   margin-left: 10px;
 }
 
 input {
-  padding: 0.5em;
+  padding: 1em 0.5em;
   border-radius: 5px;
   border: none;
   background: lightgrey;
@@ -268,6 +274,7 @@ nav li {
 @media (max-width: 1030px) {
   nav li {
     display: block;
+    margin-right: 30px;
   }
 }
 

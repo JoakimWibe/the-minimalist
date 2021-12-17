@@ -1,14 +1,11 @@
 import { baseUrl } from "./settings/api.js";
 import { saveToken, saveUser } from "./utils/storage/user.js";
-import { validateEmail, checkLenght } from "./components/common/formValidation.js";
 import navbar from "./components/common/navbar.js";
 import displayMessage from "./components/common/displayMessage.js";
 
 const form = document.querySelector("#loginForm");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-const emailError = document.querySelector("#emailError");
-const passwordError = document.querySelector("#passwordError");
 
 navbar();
 
@@ -20,19 +17,11 @@ function submitForm(event) {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
 
-  if (validateEmail(email.value) === true) {
-    emailError.style.display = "none";
+  if (emailValue.length > 0 && passwordValue.length > 0) {
+    doLogin(emailValue, passwordValue);
   } else {
-    emailError.style.display = "block";
+    displayMessage("warning", "please fill out valid values in both fields", ".message-container");
   }
-
-  if (checkLenght(password.value, 4) === true) {
-    passwordError.style.display = "none";
-  } else {
-    passwordError.style.display = "block";
-  }
-
-  doLogin(emailValue, passwordValue);
 }
 
 async function doLogin(email, password) {

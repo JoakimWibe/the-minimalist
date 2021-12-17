@@ -1,6 +1,6 @@
-import { getToken } from "../../utils/storage/user.js";
 import { productsUrl } from "../../settings/api.js";
 import displayMessage from "../common/displayMessage.js";
+import { getToken } from "../../utils/storage/user.js";
 
 export async function createProduct(title, price, description, image, featured) {
   const form = document.querySelector("#productForm");
