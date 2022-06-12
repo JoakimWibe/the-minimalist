@@ -22,7 +22,7 @@ The Minimalist is an E-commerce application for a fictional clothing brand. On t
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone git@github.com:JoakimWibe/the-minimalist.git
 ```
 
 ## Contact
