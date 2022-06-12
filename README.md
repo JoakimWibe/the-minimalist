@@ -29,4 +29,4 @@ git clone git@github.com:JoakimWibe/the-minimalist.git
 
 My Email: wibejoakim@gmail.com
 
-[My LinkedIn page](https://www.linkedin.com/joakim-myhre-wibe-a732ba237/)
+[My LinkedIn page](https://www.linkedin.com/in/joakim-myhre-wibe-a732ba237)
